@@ -1,0 +1,630 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Deliva</title>
+  </head>
+  <body>
+    <div class="parent-container" id="parentContainer">
+      <div class="menu-panel">
+        <div class="menu-bg"></div>
+        <div class="menu-header">
+          <h3>Deliva</h3>
+          <div class="header-item" id="menuBtn">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            class="lucide lucide-panel-left-icon lucide-panel-left"
+          >
+            <rect width="18" height="18" x="3" y="3" rx="2" />
+            <path d="M9 3v18" />
+          </svg>
+        </div>
+        </div>
+        
+        <div class="menu-ctrl-sec">
+          <div class="row">
+            <div class="location-info" id="locationBtn">
+              <div class="image"></div>
+              <div class="name">Location</div>
+            </div>
+            <div class="location-info">
+              <div class="image"></div>
+              <div class="name">Location</div>
+            </div>
+            <div class="location-info">
+              <div class="image"></div>
+              <div class="name">Location</div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="location-info">
+              <div class="image"></div>
+              <div class="name">Location</div>
+            </div>
+            <div class="location-info">
+              <div class="image"></div>
+              <div class="name">Location</div>
+            </div>
+            <div class="location-info">
+              <div class="image"></div>
+              <div class="name">Location</div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="location-info">
+              <div class="image"></div>
+              <div class="name">Location</div>
+            </div>
+            <div class="location-info">
+              <div class="image"></div>
+              <div class="name">Location</div>
+            </div>
+            <div class="location-info">
+              <div class="image"></div>
+              <div class="name">Location</div>
+            </div>
+          </div>
+        </div>
+        <div class="divider"></div>
+        <div class="menu-item-sec">
+          <div class="menu-item">Insights</div>
+          <div class="menu-item">Menu item</div>
+          <div class="menu-item">Menu item</div>
+          <div class="menu-item">Menu item</div>
+          <div class="menu-item">Menu item</div>
+          <div class="menu-item">Menu item</div>
+          <div class="menu-item">Menu item</div>
+        </div>
+
+        <div class="menu-footer">
+          <div class="menu-footer-item" id="profileBtn">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+            >
+              <g
+                fill="none"
+                stroke="currentColor"
+                stroke-dasharray="28"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+              >
+                <path d="M4 21v-1c0 -3.31 2.69 -6 6 -6h4c3.31 0 6 2.69 6 6v1">
+                  <animate
+                    fill="freeze"
+                    attributeName="stroke-dashoffset"
+                    dur="0.4s"
+                    values="28;0"
+                  />
+                </path>
+                <path
+                  stroke-dashoffset="28"
+                  d="M12 11c-2.21 0 -4 -1.79 -4 -4c0 -2.21 1.79 -4 4 -4c2.21 0 4 1.79 4 4c0 2.21 -1.79 4 -4 4Z"
+                >
+                  <animate
+                    fill="freeze"
+                    attributeName="stroke-dashoffset"
+                    begin="0.4s"
+                    dur="0.4s"
+                    to="0"
+                  />
+                </path>
+              </g>
+            </svg>
+          </div>
+          <div class="menu-footer-item" id="settingBtn">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+            >
+              <g fill="none" stroke="currentColor" stroke-width="1.5">
+                <circle cx="12" cy="12" r="3" />
+                <path
+                  d="M13.765 2.152C13.398 2 12.932 2 12 2s-1.398 0-1.765.152a2 2 0 0 0-1.083 1.083c-.092.223-.129.484-.143.863a1.62 1.62 0 0 1-.79 1.353a1.62 1.62 0 0 1-1.567.008c-.336-.178-.579-.276-.82-.308a2 2 0 0 0-1.478.396C4.04 5.79 3.806 6.193 3.34 7s-.7 1.21-.751 1.605a2 2 0 0 0 .396 1.479c.148.192.355.353.676.555c.473.297.777.803.777 1.361s-.304 1.064-.777 1.36c-.321.203-.529.364-.676.556a2 2 0 0 0-.396 1.479c.052.394.285.798.75 1.605c.467.807.7 1.21 1.015 1.453a2 2 0 0 0 1.479.396c.24-.032.483-.13.819-.308a1.62 1.62 0 0 1 1.567.008c.483.28.77.795.79 1.353c.014.38.05.64.143.863a2 2 0 0 0 1.083 1.083C10.602 22 11.068 22 12 22s1.398 0 1.765-.152a2 2 0 0 0 1.083-1.083c.092-.223.129-.483.143-.863c.02-.558.307-1.074.79-1.353a1.62 1.62 0 0 1 1.567-.008c.336.178.579.276.819.308a2 2 0 0 0 1.479-.396c.315-.242.548-.646 1.014-1.453s.7-1.21.751-1.605a2 2 0 0 0-.396-1.479c-.148-.192-.355-.353-.676-.555A1.62 1.62 0 0 1 19.562 12c0-.558.304-1.064.777-1.36c.321-.203.529-.364.676-.556a2 2 0 0 0 .396-1.479c-.052-.394-.285-.798-.75-1.605c-.467-.807-.7-1.21-1.015-1.453a2 2 0 0 0-1.479-.396c-.24.032-.483.13-.82.308a1.62 1.62 0 0 1-1.566-.008a1.62 1.62 0 0 1-.79-1.353c-.014-.38-.05-.64-.143-.863a2 2 0 0 0-1.083-1.083Z"
+                />
+              </g>
+            </svg>
+          </div>
+        </div>
+      </div>
+      <div class="pages">
+        <div class="page main">
+          <div class="page-header">
+            <input
+              type="search"
+              placeholder="Search item.."
+              class="searchbar"
+            />
+            <div class="header-item" id="tracker">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                xmlns:xlink="http://www.w3.org/1999/xlink"
+                version="1.1"
+                width="42"
+                height="42"
+                viewBox="0 0 256 256"
+                xml:space="preserve"
+              >
+                <g
+                  style="
+                    stroke: none;
+                    stroke-width: 0;
+                    stroke-dasharray: none;
+                    stroke-linecap: butt;
+                    stroke-linejoin: miter;
+                    stroke-miterlimit: 10;
+                    fill: none;
+                    fill-rule: nonzero;
+                    opacity: 1;
+                  "
+                  transform="translate(1.4065934065934016 1.4065934065934016) scale(2.81 2.81)"
+                >
+                  <path
+                    d="M 66.105 61.89 h -21.49 c -0.552 0 -1 -0.447 -1 -1 s 0.448 -1 1 -1 h 20.49 v -35.07 H 20.263 v 3.517 c 0 0.552 -0.448 1 -1 1 s -1 -0.448 -1 -1 v -4.517 c 0 -0.552 0.448 -1 1 -1 h 46.842 c 0.553 0 1 0.448 1 1 v 37.07 C 67.105 61.442 66.658 61.89 66.105 61.89 z"
+                    style="
+                      stroke: none;
+                      stroke-width: 1;
+                      stroke-dasharray: none;
+                      stroke-linecap: butt;
+                      stroke-linejoin: miter;
+                      stroke-miterlimit: 10;
+                      fill: rgb(0, 0, 0);
+                      fill-rule: nonzero;
+                      opacity: 1;
+                    "
+                    transform=" matrix(1 0 0 1 0 0) "
+                    stroke-linecap="round"
+                  />
+                  <path
+                    d="M 27.683 61.89 h -8.42 c -0.552 0 -1 -0.447 -1 -1 v -5.037 c 0 -0.553 0.448 -1 1 -1 s 1 0.447 1 1 v 4.037 h 7.42 c 0.552 0 1 0.447 1 1 S 28.235 61.89 27.683 61.89 z"
+                    style="
+                      stroke: none;
+                      stroke-width: 1;
+                      stroke-dasharray: none;
+                      stroke-linecap: butt;
+                      stroke-linejoin: miter;
+                      stroke-miterlimit: 10;
+                      fill: rgb(0, 0, 0);
+                      fill-rule: nonzero;
+                      opacity: 1;
+                    "
+                    transform=" matrix(1 0 0 1 0 0) "
+                    stroke-linecap="round"
+                  />
+                  <path
+                    d="M 89 61.89 c -0.55 0 -0.996 -0.443 -1 -0.993 L 87.905 46.76 L 77.653 35.999 H 67.105 V 59.89 h 5.685 c 0.553 0 1 0.447 1 1 s -0.447 1 -1 1 h -6.685 c -0.553 0 -1 -0.447 -1 -1 V 34.999 c 0 -0.552 0.447 -1 1 -1 h 11.977 c 0.273 0 0.535 0.112 0.724 0.31 l 10.82 11.358 c 0.176 0.185 0.274 0.429 0.276 0.683 L 90 60.883 c 0.004 0.553 -0.441 1.003 -0.993 1.007 C 89.005 61.89 89.002 61.89 89 61.89 z"
+                    style="
+                      stroke: none;
+                      stroke-width: 1;
+                      stroke-dasharray: none;
+                      stroke-linecap: butt;
+                      stroke-linejoin: miter;
+                      stroke-miterlimit: 10;
+                      fill: rgb(0, 0, 0);
+                      fill-rule: nonzero;
+                      opacity: 1;
+                    "
+                    transform=" matrix(1 0 0 1 0 0) "
+                    stroke-linecap="round"
+                  />
+                  <path
+                    d="M 80.892 47.356 h -8.465 c -0.553 0 -1 -0.447 -1 -1 V 34.999 c 0 -0.552 0.447 -1 1 -1 s 1 0.448 1 1 v 10.358 h 7.465 c 0.553 0 1 0.448 1 1 C 81.892 46.909 81.444 47.356 80.892 47.356 z"
+                    style="
+                      stroke: none;
+                      stroke-width: 1;
+                      stroke-dasharray: none;
+                      stroke-linecap: butt;
+                      stroke-linejoin: miter;
+                      stroke-miterlimit: 10;
+                      fill: rgb(0, 0, 0);
+                      fill-rule: nonzero;
+                      opacity: 1;
+                    "
+                    transform=" matrix(1 0 0 1 0 0) "
+                    stroke-linecap="round"
+                  />
+                  <path
+                    d="M 32.975 67.181 c -3.469 0 -6.292 -2.822 -6.292 -6.291 s 2.822 -6.291 6.292 -6.291 c 3.469 0 6.291 2.822 6.291 6.291 S 36.443 67.181 32.975 67.181 z M 32.975 56.599 c -2.366 0 -4.292 1.925 -4.292 4.291 s 1.925 4.291 4.292 4.291 s 4.291 -1.925 4.291 -4.291 S 35.341 56.599 32.975 56.599 z"
+                    style="
+                      stroke: none;
+                      stroke-width: 1;
+                      stroke-dasharray: none;
+                      stroke-linecap: butt;
+                      stroke-linejoin: miter;
+                      stroke-miterlimit: 10;
+                      fill: rgb(0, 0, 0);
+                      fill-rule: nonzero;
+                      opacity: 1;
+                    "
+                    transform=" matrix(1 0 0 1 0 0) "
+                    stroke-linecap="round"
+                  />
+                  <path
+                    d="M 78.082 67.181 c -3.47 0 -6.292 -2.822 -6.292 -6.291 s 2.822 -6.291 6.292 -6.291 c 3.469 0 6.291 2.822 6.291 6.291 S 81.551 67.181 78.082 67.181 z M 78.082 56.599 c -2.366 0 -4.292 1.925 -4.292 4.291 s 1.926 4.291 4.292 4.291 s 4.291 -1.925 4.291 -4.291 S 80.448 56.599 78.082 56.599 z"
+                    style="
+                      stroke: none;
+                      stroke-width: 1;
+                      stroke-dasharray: none;
+                      stroke-linecap: butt;
+                      stroke-linejoin: miter;
+                      stroke-miterlimit: 10;
+                      fill: rgb(0, 0, 0);
+                      fill-rule: nonzero;
+                      opacity: 1;
+                    "
+                    transform=" matrix(1 0 0 1 0 0) "
+                    stroke-linecap="round"
+                  />
+                  <path
+                    d="M 42.684 43.354 H 1 c -0.552 0 -1 -0.448 -1 -1 s 0.448 -1 1 -1 h 41.684 c 0.552 0 1 0.448 1 1 S 43.236 43.354 42.684 43.354 z"
+                    style="
+                      stroke: none;
+                      stroke-width: 1;
+                      stroke-dasharray: none;
+                      stroke-linecap: butt;
+                      stroke-linejoin: miter;
+                      stroke-miterlimit: 10;
+                      fill: rgb(0, 0, 0);
+                      fill-rule: nonzero;
+                      opacity: 1;
+                    "
+                    transform=" matrix(1 0 0 1 0 0) "
+                    stroke-linecap="round"
+                  />
+                  <path
+                    d="M 42.684 34.888 H 11.583 c -0.552 0 -1 -0.448 -1 -1 s 0.448 -1 1 -1 h 31.102 c 0.552 0 1 0.448 1 1 S 43.236 34.888 42.684 34.888 z"
+                    style="
+                      stroke: none;
+                      stroke-width: 1;
+                      stroke-dasharray: none;
+                      stroke-linecap: butt;
+                      stroke-linejoin: miter;
+                      stroke-miterlimit: 10;
+                      fill: rgb(0, 0, 0);
+                      fill-rule: nonzero;
+                      opacity: 1;
+                    "
+                    transform=" matrix(1 0 0 1 0 0) "
+                    stroke-linecap="round"
+                  />
+                  <path
+                    d="M 42.684 51.82 H 11.583 c -0.552 0 -1 -0.447 -1 -1 s 0.448 -1 1 -1 h 31.102 c 0.552 0 1 0.447 1 1 S 43.236 51.82 42.684 51.82 z"
+                    style="
+                      stroke: none;
+                      stroke-width: 1;
+                      stroke-dasharray: none;
+                      stroke-linecap: butt;
+                      stroke-linejoin: miter;
+                      stroke-miterlimit: 10;
+                      fill: rgb(0, 0, 0);
+                      fill-rule: nonzero;
+                      opacity: 1;
+                    "
+                    transform=" matrix(1 0 0 1 0 0) "
+                    stroke-linecap="round"
+                  />
+                </g>
+              </svg>
+            </div>
+          </div>
+          <div class="page-content">
+            <div class="filter-wrapper">
+              <div class="filter-item" id="itemsBtn" data-target="homeXrn">
+                Items
+              </div>
+              <div class="filter-item" id="receiptsBtn" data-target="itemsXrn">
+                Receipts
+              </div>
+              <div class="filter-item" id="notesNotes" data-target="notesXrn">
+                Notes
+              </div>
+              <div class="filter-item">Delivering</div>
+              <div class="filter-item">Delivered</div>
+              <div class="filter-item">Scheduled</div>
+              <div class="filter-item">Unsafe</div>
+            </div>
+            <div class="filter-xrns-container">
+              <div class="filter-xrn active" id="homeXrn">
+                <div class="divider"></div>
+                <div class="display-sec">
+                  <div
+                    class="display-card"
+                    style="background-image: url(images/curvechart.png)"
+                  ></div>
+                  <div
+                    class="display-card"
+                    style="background-image: url(images/image5.jpg)"
+                  ></div>
+                  <div
+                    class="display-card"
+                    style="background-image: url(images/image1.jpg)"
+                  ></div>
+                  <div
+                    class="display-card"
+                    style="background-image: url(images/image2.jpg)"
+                  ></div>
+                  <div
+                    class="display-card"
+                    style="
+                      background-image: url(images/products_and_services.jpeg);
+                    "
+                  ></div>
+                  <div
+                    class="display-card"
+                    style="background-image: url(images/Deliverytruck.webp)"
+                  ></div>
+                </div>
+                <div class="divider"></div>
+                <div class="items-info-container">
+                  <div class="header-text">
+                    <h2>Receipt</h2>
+                    <div class="code-container"><h3></h3></div>
+                  </div>
+                  <div class="receipt-form">
+                    <div class="item-info date-field">
+                      Date:
+                      <input
+                        id="dateInput"
+                        type="date"
+                        class="input-field"
+                        placeholder="Delivering date"
+                      />
+                    </div>
+                    <div class="row">
+                      <div class="item-info">
+                        Sender's name:
+                        <input
+                          id="senderNameInput"
+                          type="text"
+                          class="input-field"
+                          placeholder="Enter name of sender"
+                        />
+                      </div>
+                      <div class="item-info">
+                        Sender's number:
+                        <input
+                          id="senderNumberInput"
+                          type="number"
+                          class="input-field"
+                          placeholder="Number of sender"
+                        />
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="item-info">
+                        Receiver's name:
+                        <input
+                          id="receiverNameInput"
+                          type="text"
+                          class="input-field"
+                          placeholder="Enter name of recipient"
+                        />
+                      </div>
+                      <div class="item-info">
+                        Receiver's number:
+                        <input
+                          id="receiverNumberInput"
+                          type="number"
+                          class="input-field"
+                          placeholder="Recipient's number"
+                        />
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="item-info">
+                        Description:
+                        <input
+                          id="descriptionInput"
+                          type="text"
+                          class="input-field"
+                          placeholder="Product's"
+                        />
+                      </div>
+                      <div class="item-info">
+                        Note:
+                        <input
+                          id="noteInput"
+                          type="text"
+                          class="input-field"
+                          placeholder="Optional message"
+                        />
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="item-info">
+                        Quantity:
+                        <input
+                          id="quantityInput"
+                          type="number"
+                          class="input-field"
+                          placeholder="Number of items"
+                        />
+                      </div>
+                      <div class="item-info">
+                        Destination:
+                        <input
+                          id="destinationInput"
+                          type="text"
+                          class="input-field"
+                          placeholder="Delivering to.."
+                        />
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="item-info">
+                        Fee charged- R:
+                        <input
+                          id="riderFeeInput"
+                          type="number"
+                          class="input-field"
+                          placeholder="Rider's charge"
+                        />
+                      </div>
+                      <div class="item-info">
+                        Fee charged- P:
+                        <input
+                          id="serviceFeeInput"
+                          type="number"
+                          class="input-field"
+                          placeholder="Service charge"
+                        />
+                      </div>
+                    </div>
+                    <div class="row space-up">
+                      <div class="item-info">
+                        Agent's name:
+                        <input
+                          id="agentNameInput"
+                          type="text"
+                          class="input-field"
+                          placeholder="Delivering agent"
+                        />
+                      </div>
+                      <div class="item-info">
+                        Agent's number:
+                        <input
+                          id="agentNumberInput"
+                          type="number"
+                          class="input-field"
+                          placeholder="Delivering agent"
+                        />
+                      </div>
+                    </div>
+                    <div class="save-btn" id="saveBtn">Save</div>
+                  </div>
+                </div>
+                <div class="items-info-container">
+                  <div class="header-text">
+                    <h2>Way Bill</h2>
+                    <button class="btn" id="expandBtn">Collapse</button>
+                  </div>
+                  <div class="bill-container"></div>
+                </div>
+              </div>
+              <div class="filter-xrn" id="itemsXrn"></div>
+              <div class="filter-xrn" id="notesXrn"></div>
+            </div>
+          </div>
+        </div>
+        <div class="page" id="locationPage">
+          <div class="location-coverimg-container">
+            <div class="location-coverimg">
+              <div class="image-blur"></div>
+              <div class="image-line-blur"></div>
+            </div>
+          </div>
+          <div class="location-page-header"></div>
+          <div class="location-content">
+            <div class="location-name">
+              <h2>Location</h2>
+            </div>
+            <div class="agent-details">
+              <div class="agent-info-item">
+                <div class="agent-info">
+                  <h3>Agent name</h3>
+                  <div class="icon">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="24"
+                      height="24"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      class="lucide lucide-user-icon lucide-user"
+                    >
+                      <path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2" />
+                      <circle cx="12" cy="7" r="4" />
+                    </svg>
+                  </div>
+                </div>
+                <div class="agent-info-field">
+                  <h3>Nameof Agent</h3>
+                </div>
+              </div>
+              <div class="divider"></div>
+              <div class="agent-info-item">
+                <div class="agent-info">
+                  <h3>Agent Tel no</h3>
+                  <div class="icon">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="220"
+                      height="220"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      class="lucide lucide-phone-icon lucide-phone"
+                    >
+                      <path
+                        d="M13.832 16.568a1 1 0 0 0 1.213-.303l.355-.465A2 2 0 0 1 17 15h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2A18 18 0 0 1 2 4a2 2 0 0 1 2-2h3a2 2 0 0 1 2 2v3a2 2 0 0 1-.8 1.6l-.468.351a1 1 0 0 0-.292 1.233 14 14 0 0 0 6.392 6.384"
+                      />
+                    </svg>
+                  </div>
+                </div>
+                <div class="agent-info-field">
+                  <div class="numbers-container">
+                    <h3>Numberof Agent</h3>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="items-info-container">
+              <div class="date-container">Date</div>
+            </div>
+            <div class="location-items-container"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="footer-notes-bar">
+      <div class="f-note">Upcoming: 4</div>
+      <div class="f-note">Running: 6</div>
+      <div class="f-note">Completed: 2</div>
+      <div class="f-note" id="fNoteTotal"></div>
+      <div class="f-note">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="14"
+          height="14"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          class="lucide lucide-triangle-alert-icon lucide-triangle-alert"
+        >
+          <path
+            d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3"
+          />
+          <path d="M12 9v4" />
+          <path d="M12 17h.01" />
+        </svg>
+        Unsafe: 0
+      </div>
+      <div class="f-note" id="footerClient">Finding clients... 4</div>
+    </div>
+  </body>
+  <script src="main.js"></script>
+</html>
