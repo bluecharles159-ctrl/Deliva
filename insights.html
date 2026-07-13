@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -78,8 +78,18 @@
         </div>
         <div class="divider"></div>
         <div class="menu-item-sec">
-          <a href="index.html" class="menu-item" style="text-decoration: none; color: inherit;">Dashboard</a>
-          <div class="menu-item">Insights</div>
+          <a
+            href="index.html"
+            class="menu-item"
+            style="text-decoration: none; color: inherit"
+            >Dashboard</a
+          >
+          <a
+            href="insights.html"
+            class="menu-item"
+            style="text-decoration: none; color: inherit"
+            >Insights</a
+          >
           <div class="menu-item">Menu item</div>
           <div class="menu-item">Menu item</div>
           <div class="menu-item">Menu item</div>
@@ -147,7 +157,7 @@
       <div class="pages">
         <div class="page main">
           <div class="page-header">
-            <h1 style="margin: 0;">Insights & Analytics</h1>
+            <h1 style="margin: 0">Insights & Analytics</h1>
             <div class="header-item" id="refreshInsights" title="Refresh data">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -162,7 +172,9 @@
               >
                 <polyline points="1 4 1 10 7 10"></polyline>
                 <polyline points="23 20 23 14 17 14"></polyline>
-                <path d="M20.49 9A9 9 0 0 0 5.64 5.64M3.51 15A9 9 0 0 0 18.36 18.36"></path>
+                <path
+                  d="M20.49 9A9 9 0 0 0 5.64 5.64M3.51 15A9 9 0 0 0 18.36 18.36"
+                ></path>
               </svg>
             </div>
           </div>
@@ -199,7 +211,13 @@
 
                 <div class="insight-card">
                   <div class="insight-label">Unsafe Issues</div>
-                  <div class="insight-value" id="unsafeDeliveries" style="color: #f44336;">0</div>
+                  <div
+                    class="insight-value"
+                    id="unsafeDeliveries"
+                    style="color: #f44336"
+                  >
+                    0
+                  </div>
                   <div class="insight-detail">Needs attention</div>
                 </div>
               </div>
@@ -211,15 +229,21 @@
                   <div class="revenue-breakdown">
                     <div class="revenue-item">
                       <span class="revenue-label">Rider Fees Collected</span>
-                      <span class="revenue-value">₹<span id="totalRiderFees">0</span></span>
+                      <span class="revenue-value"
+                        >₹<span id="totalRiderFees">0</span></span
+                      >
                     </div>
                     <div class="revenue-item">
                       <span class="revenue-label">Service Fees Collected</span>
-                      <span class="revenue-value">₹<span id="totalServiceFees">0</span></span>
+                      <span class="revenue-value"
+                        >₹<span id="totalServiceFees">0</span></span
+                      >
                     </div>
                     <div class="revenue-item">
                       <span class="revenue-label">Total Revenue</span>
-                      <span class="revenue-value" style="color: #8be93f;">₹<span id="totalRevenue">0</span></span>
+                      <span class="revenue-value" style="color: #8be93f"
+                        >₹<span id="totalRevenue">0</span></span
+                      >
                     </div>
                   </div>
                 </div>
@@ -233,28 +257,44 @@
                     <div class="chart-bar">
                       <div class="bar-label">Completed</div>
                       <div class="bar-wrapper">
-                        <div class="bar" style="background: #8be93f; width: 0%;" id="barCompleted"></div>
+                        <div
+                          class="bar"
+                          style="background: #8be93f; width: 0%"
+                          id="barCompleted"
+                        ></div>
                       </div>
                       <div class="bar-value" id="valueCompleted">0</div>
                     </div>
                     <div class="chart-bar">
                       <div class="bar-label">Delivering</div>
                       <div class="bar-wrapper">
-                        <div class="bar" style="background: #ff9500; width: 0%;" id="barDelivering"></div>
+                        <div
+                          class="bar"
+                          style="background: #ff9500; width: 0%"
+                          id="barDelivering"
+                        ></div>
                       </div>
                       <div class="bar-value" id="valueDelivering">0</div>
                     </div>
                     <div class="chart-bar">
                       <div class="bar-label">Scheduled</div>
                       <div class="bar-wrapper">
-                        <div class="bar" style="background: #2196f3; width: 0%;" id="barScheduled"></div>
+                        <div
+                          class="bar"
+                          style="background: #2196f3; width: 0%"
+                          id="barScheduled"
+                        ></div>
                       </div>
                       <div class="bar-value" id="valueScheduled">0</div>
                     </div>
                     <div class="chart-bar">
                       <div class="bar-label">Unsafe</div>
                       <div class="bar-wrapper">
-                        <div class="bar" style="background: #f44336; width: 0%;" id="barUnsafe"></div>
+                        <div
+                          class="bar"
+                          style="background: #f44336; width: 0%"
+                          id="barUnsafe"
+                        ></div>
                       </div>
                       <div class="bar-value" id="valueUnsafe">0</div>
                     </div>
