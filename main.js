@@ -11,7 +11,7 @@ const dateDiv = document.getElementById("dateInput");
 const senderNameDiv = document.getElementById("senderNameInput");
 const senderNumberDiv = document.getElementById("senderNumberInput");
 const receiverNameDiv = document.getElementById("receiverNameInput");
-const receiverNumberDiv = document.getElementById("receiverNumberDiv");
+const receiverNumberDiv = document.getElementById("receiverNumberInput");
 const descriptionDiv = document.getElementById("descriptionInput");
 const noteDiv = document.getElementById("noteInput");
 const quantityDiv = document.getElementById("quantityInput");
@@ -181,21 +181,21 @@ function saveReceipt() {
   };
 
   if (!input.description) {
-    descriptionInput.style.borderColor = "red";
-    descriptionInput.focus();
+    descriptionDiv.style.borderColor = "red";
+    descriptionDiv.focus();
 
     return;
   } else {
-    descriptionInput.style.borderBottom = "1px solid hsl(0, 0%, 50%)";
+    descriptionDiv.style.borderBottom = "1px solid hsl(0, 0%, 50%)";
   }
 
   if (!input.destination) {
-    destinationInput.style.borderColor = "red";
-    destinationInput.focus();
+    destinationDiv.style.borderColor = "red";
+    destinationDiv.focus();
 
     return;
   } else {
-    destinationInput.style.borderBottom = "1px solid hsl(0, 0%, 50%)";
+    destinationDiv.style.borderBottom = "1px solid hsl(0, 0%, 50%)";
   }
 
   console.log(input);
@@ -418,18 +418,12 @@ function collapseBill() {
 collapseBill();
 
 // ===================== SLIDER FUNCTIONALITY =====================
-// Slider: center-snap, autoplay, and seamless infinite loop for `.display-sec`
-// Technique: append a full duplicate set of cards after the real ones.
-// Autoplay always scrolls forward; once it reaches the last duplicate card
-// (which looks identical to the last real card), it silently jumps back
-// (no animation) to the real last card so the loop never visibly "rewinds".
 let displaySliderState = null;
 
 function initDisplaySlider() {
   const displaySec = document.querySelector(".display-sec");
   if (!displaySec) return;
 
-  // already set up once before - just (re)start autoplay
   if (displaySliderState) {
     displaySliderState.startAuto();
     return;
@@ -440,7 +434,7 @@ function initDisplaySlider() {
   );
   if (!originalCards.length) return;
 
-  const pause = 2000; // 2s pause per request
+  const pause = 2000;
   const canLoop = originalCards.length > 1;
   const realCount = originalCards.length;
   let cards = originalCards;
@@ -477,23 +471,18 @@ function initDisplaySlider() {
       const next = current + 1;
       scrollToIndex(next);
       if (canLoop && next === cards.length - 1) {
-        // we just animated onto the last duplicate card, which looks
-        // identical to the last real card - once that settles, teleport
-        // invisibly back to the real last card
         setTimeout(() => scrollToIndex(realCount - 1, true), 350);
       }
-    }, pause + 300); // small buffer for smooth scroll
+    }, pause + 300);
   }
 
   function stopAuto() {
     clearInterval(autoTimer);
   }
 
-  // initial centering once layout is settled, no animation
   setTimeout(() => scrollToIndex(0, true), 120);
   startAuto();
 
-  // pause on user interaction and resume after idle
   displaySec.addEventListener(
     "wheel",
     () => {
@@ -524,7 +513,6 @@ function initDisplaySlider() {
   displaySec.addEventListener("scroll", () => {
     clearTimeout(scrollTimeout);
     scrollTimeout = setTimeout(() => {
-      // find nearest card to center and snap
       const centers = cards.map((c) => c.offsetLeft + c.clientWidth / 2);
       const containerCenter =
         displaySec.scrollLeft + displaySec.clientWidth / 2;
@@ -539,7 +527,6 @@ function initDisplaySlider() {
       });
 
       if (canLoop && nearestIndex === cards.length - 1) {
-        // landed on the last duplicate card - teleport to the real last card
         scrollToIndex(realCount - 1, true);
       } else {
         scrollToIndex(nearestIndex);
@@ -550,31 +537,34 @@ function initDisplaySlider() {
   displaySliderState = { startAuto, stopAuto };
 }
 
-// also try to init on load in case display is already visible
 window.addEventListener("load", () => {
   initDisplaySlider();
 });
 
 // ===================== FILTER & XRN PANEL SWITCHING =====================
-// Filter -> filter-xrn switcher
-// Each .filter-item with a data-target points at the id of the
-// .filter-xrn panel it should reveal. Panels sit off-screen
-// (translateX 100%) until they get the "active" class.
 const filterXrnsContainer = document.querySelector(".filter-xrns-container");
 const filterXrns = Array.from(document.querySelectorAll(".filter-xrn"));
 const filterButtons = Array.from(
   document.querySelectorAll(".filter-item[data-target]"),
 );
 
+let currentActiveXrnId = "homeXrn";
+
 function resizeXrnContainer(activeXrn) {
   if (!filterXrnsContainer || !activeXrn) return;
-  // wait a frame so the browser has laid out the now-active panel
   requestAnimationFrame(() => {
     filterXrnsContainer.style.height = activeXrn.scrollHeight + "px";
   });
 }
 
 function setActiveXrn(targetId) {
+  // Prevent switching to already active panel
+  if (currentActiveXrnId === targetId) {
+    return;
+  }
+
+  currentActiveXrnId = targetId;
+
   const targetXrn = document.getElementById(targetId);
   if (!targetXrn) return;
 
@@ -600,21 +590,24 @@ function setActiveXrn(targetId) {
 }
 
 filterButtons.forEach((btn) => {
-  btn.addEventListener("click", () => setActiveXrn(btn.dataset.target));
+  btn.addEventListener("click", () => {
+    const targetId = btn.dataset.target;
+    setActiveXrn(targetId);
+  });
 });
 
 window.addEventListener("resize", () => {
   resizeXrnContainer(document.querySelector(".filter-xrn.active"));
 });
 
-// show the receipt/waybill panel by default, same as before
+// Initialize with home panel
 setActiveXrn("homeXrn");
 
 // ===================== RECEIPTS PAGE =====================
 function loadReceiptsPage() {
   const receiptsContainer = document.getElementById("itemsXrn");
   const archived = getArchivedWaybills();
-  const dates = Object.keys(archived).sort().reverse(); // Sort dates in descending order
+  const dates = Object.keys(archived).sort().reverse();
 
   receiptsContainer.innerHTML = "";
 
@@ -681,7 +674,8 @@ function loadReceiptsPage() {
       billsList.appendChild(billElement);
     });
 
-    expandBtn.addEventListener("click", () => {
+    expandBtn.addEventListener("click", (e) => {
+      e.stopPropagation();
       const isExpanded = expandBtn.dataset.expanded === "true";
       expandBtn.dataset.expanded = !isExpanded;
       billsContainer.style.display = isExpanded ? "none" : "block";
@@ -690,6 +684,8 @@ function loadReceiptsPage() {
 
     receiptsContainer.appendChild(dateContainer);
   });
+
+  resizeXrnContainer(receiptsContainer.parentElement);
 }
 
 /* const info = {
@@ -707,8 +703,35 @@ locationBtn.addEventListener("click", () => {
   console.log(document.querySelector(".menu-ctrl-sec").closest);
 });
 
+// ===================== MENU ITEMS ACTIVE STATE =====================
+const menuItems = document.querySelectorAll(".menu-item");
+let currentActiveMenu = null;
+
+menuItems.forEach((item) => {
+  item.addEventListener("click", (e) => {
+    e.stopPropagation();
+    
+    // Only toggle if it's a div (not an anchor tag)
+    if (item.tagName === "DIV") {
+      // Remove active from previously active item
+      if (currentActiveMenu && currentActiveMenu !== item) {
+        currentActiveMenu.classList.remove("active");
+      }
+
+      // Toggle active on clicked item
+      item.classList.toggle("active");
+      
+      // Update current active menu
+      if (item.classList.contains("active")) {
+        currentActiveMenu = item;
+      } else {
+        currentActiveMenu = null;
+      }
+    }
+  });
+});
+
 // ===================== INITIALIZATION =====================
-// Initialize storage and load waybills on page load
 window.addEventListener("load", () => {
   initializeStorage();
   updateCurrentDateDisplay();
