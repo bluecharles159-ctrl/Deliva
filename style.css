@@ -61,15 +61,12 @@ body {
   overflow-y: auto;
   padding-bottom: 100px;
 }
-.main {
-  transform: translateX(0);
-}
 .page.show {
   transform: translateX(0);
 }
-#locationBtn {
-  background: green;
-}
+/* #locationBtn {
+  background: none;
+} */
 .page-header {
   padding: 16px 0 30px;
   display: flex;
@@ -100,7 +97,7 @@ body {
   width: 100%;
   height: 20px;
   padding: 16px;
-  background: hsl(0, 0%, 0%, .1);
+  background: hsl(0, 0%, 0%, 0.1);
   backdrop-filter: blur(10px);
   position: absolute;
   left: 0;
@@ -216,7 +213,7 @@ body {
   transition:
     width 0.3s ease,
     margin-left 0.3s ease;
-    /* 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275) */
+  /* 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275) */
 }
 .parent-container.menu #menuBtn {
   margin-right: 6px;
@@ -286,7 +283,15 @@ body {
   width: 40px;
   height: 40px;
   border-radius: 50%;
-  background: rgb(150, 150, 150);
+  /* background: rgba(235, 235, 235, 0.274); */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.location-info .image svg {
+  width: 26px;
+  height: 26px;
+  stroke-width: 1.2px;
 }
 .location-info .name {
   padding: 3px;
@@ -334,6 +339,10 @@ body {
 }
 .menu-item:hover {
   background: hsl(0, 0%, 96%);
+}
+.menu-item.active {
+  background: hsl(0, 0%, 96%);
+  font-weight: 600;
 }
 .menu-footer {
   display: flex;
@@ -403,7 +412,6 @@ body {
   font-weight: 600;
 }
 .filter-item {
-  min-width: 60px;
   padding: 6px 12px;
   border-radius: 20px;
   background: hsl(0, 0%, 70%, 0.1);
@@ -535,6 +543,12 @@ body {
   align-items: center;
   justify-content: flex-start;
 }
+.current-date {
+  margin-left: 10px;
+  font-size: 14px;
+  color: hsl(0, 0%, 40%);
+  font-weight: 500;
+}
 .code-container {
   flex: 1;
   display: flex;
@@ -603,7 +617,7 @@ body {
   /* width: 24px;
   height: 24px; */
   stroke-width: 2px;
-  stroke: blue;
+  stroke: rgb(59, 59, 59);
 }
 .indicator:hover {
   width: 50px;
@@ -818,4 +832,176 @@ body {
   width: fit-content;
   margin-top: -20px;
   font-weight: 600;
+}
+
+/* ===================== RECEIPTS PAGE STYLES ===================== */
+.receipts-date-container {
+  width: 100%;
+  max-width: 1080px;
+  margin-bottom: 16px;
+  border-radius: 12px;
+  background: hsla(0, 0%, 70%, 0.3);
+  overflow: hidden;
+  box-shadow: 0 2px 4px hsl(0, 0%, 0%, 0.1);
+}
+
+.receipts-date-header {
+  width: 100%;
+  padding: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: hsla(200, 70%, 50%, 0.15);
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.receipts-date-header:hover {
+  background: hsla(200, 70%, 50%, 0.25);
+}
+
+.receipts-date-label {
+  font-weight: 600;
+  font-size: 16px;
+  color: hsl(0, 0%, 10%);
+}
+
+.receipts-item-count {
+  padding: 4px 12px;
+  border-radius: 20px;
+  background: hsla(0, 0%, 0%, 0.1);
+  font-size: 12px;
+  color: hsl(0, 0%, 30%);
+  margin: 0 auto;
+}
+
+.receipts-expand-btn {
+  width: 32px;
+  height: 32px;
+  border: none;
+  border-radius: 6px;
+  background: hsla(0, 0%, 100%, 0.6);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  transition: all 0.2s ease;
+}
+
+.receipts-expand-btn:hover {
+  background: hsla(0, 0%, 100%, 0.9);
+  transform: scale(1.05);
+}
+
+.receipts-expand-btn:active {
+  transform: scale(0.95);
+}
+
+.receipts-bills-container {
+  padding: 12px;
+}
+
+.receipts-bills-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.receipts-bill-item {
+  padding: 12px;
+  border-radius: 8px;
+  background: hsla(0, 0%, 100%, 0.7);
+  border-left: 4px solid rgb(255, 115, 0);
+  transition: all 0.2s ease;
+}
+
+.receipts-bill-item:hover {
+  background: hsla(0, 0%, 100%, 0.95);
+  box-shadow: 0 2px 6px hsl(0, 0%, 0%, 0.1);
+}
+
+.receipts-bill-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 8px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid hsla(0, 0%, 0%, 0.1);
+}
+
+.receipts-bill-info h4 {
+  font-size: 14px;
+  font-weight: 600;
+  color: hsl(0, 0%, 10%);
+  margin-bottom: 4px;
+}
+
+.receipts-bill-info p {
+  font-size: 12px;
+  color: hsl(0, 0%, 40%);
+}
+
+.receipts-bill-details {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 4px;
+  text-align: right;
+}
+
+.receipts-bill-details span {
+  font-size: 12px;
+  color: hsl(0, 0%, 30%);
+}
+
+.receipts-bill-date {
+  font-size: 11px;
+  color: hsl(0, 0%, 50%);
+  font-style: italic;
+}
+
+.receipts-bill-body {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.receipts-bill-row {
+  display: flex;
+  justify-content: space-between;
+  font-size: 12px;
+  padding: 4px 0;
+}
+
+.receipts-label {
+  font-weight: 500;
+  color: hsl(0, 0%, 40%);
+  min-width: 70px;
+}
+
+.receipts-bill-row span:last-child {
+  color: hsl(0, 0%, 20%);
+  font-weight: 500;
+}
+
+@media (max-width: 600px) {
+  .receipts-date-header {
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  .receipts-item-count {
+    order: -1;
+  }
+
+  .receipts-bill-header {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .receipts-bill-details {
+    align-items: flex-start;
+    text-align: left;
+  }
 }

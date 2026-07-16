@@ -1,5 +1,14 @@
 /* Insights Page Styles */
 
+#insightsPage {
+  transform: translateX(100%);
+  transition: 0.2s ease;
+}
+
+#insightsPage.show {
+  transform: translateX(0%);
+}
+
 .insights-grid {
   width: 100%;
   max-width: 1200px;
